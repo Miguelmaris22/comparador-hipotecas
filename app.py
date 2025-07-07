@@ -11,15 +11,15 @@ import os
 
 app = Flask(__name__)
 
+
 # Configuración de Google Sheets
+import json  # Solo una vez
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-import json
-creds_dict = json.loads(os.environ["GOOGLE_CREDENTIALS_JSON"])
-import json
 creds_dict = json.loads(os.environ["GOOGLE_CREDENTIALS_JSON"])
 creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
 client = gspread.authorize(creds)
 sheet = client.open("Leads Comparador Hipotecario").sheet1
+
 
 # Configuración de correo
 EMAIL_SENDER = "miguel.maris.mm@gmail.com"
