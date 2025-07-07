@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request
 import smtplib
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -60,6 +60,7 @@ def politica_privacidad():
 
 @app.route('/enviar', methods=['POST'])
 def enviar():
+    # Recoger datos del formulario
     nombre = request.form['nombre']
     precio = float(request.form['precio'])
     aportacion = float(request.form['aportacion'])
@@ -165,8 +166,10 @@ def enviar():
         except Exception as e:
             print(f"Error al enviar correo a empresa {empresa}:", e)
 
+    # Eliminar el PDF temporal si no lo necesitas guardar
     os.remove(pdf_path)
-    return redirect("/gracias")
+
+    return render_template("gracias.html")
 
 
 if __name__ == "__main__":
