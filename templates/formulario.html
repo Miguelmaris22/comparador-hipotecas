@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Hipotecario</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 2em; background: #f5f5f5; }
+        form { background: white; padding: 2em; border-radius: 10px; max-width: 650px; margin: auto; }
+        input, select { width: 100%; margin-bottom: 1em; padding: 0.7em; border: 1px solid #ccc; border-radius: 5px; }
+        button { padding: 1em; background-color: #007BFF; color: white; border: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">Formulario Hipotecario</h2>
+    <form action="/enviar" method="post">
+        <input type="text" name="nombre" placeholder="Nombre y apellidos" required>
+        <input type="number" name="precio" placeholder="Precio de compra (€)" required>
+        <input type="number" name="aportacion" placeholder="Aportación (€)" required>
+        <input type="text" name="ciudad" placeholder="Ciudad de compra" required>
+        <input type="email" name="correo" placeholder="Correo electrónico" required>
+        <input type="tel" name="telefono" placeholder="Número de teléfono" required>
+        <input type="number" name="ingresos" placeholder="Ingresos netos mensuales (€)" required>
+        <select name="contrato" required>
+            <option value="">Tipo de contrato</option>
+            <option value="Indefinido">Indefinido</option>
+            <option value="Autónomo">Autónomo</option>
+            <option value="Funcionario">Funcionario</option>
+            <option value="Temporal">Temporal</option>
+            <option value="Fijo discontinuo">Fijo discontinuo</option>
+            <option value="Interino">Interino</option>
+        </select>
+        <input type="number" name="edad" placeholder="Edad" required>
+        <select name="finalidad" required>
+            <option value="">¿Para qué es la hipoteca?</option>
+            <option>Primera vivienda</option>
+            <option>Segunda vivienda</option>
+            <option>Inversión</option>
+            <option>Mejora de hipoteca</option>
+            <option>Autopromoción</option>
+            <option>Reunificación de deuda</option>
+            <option>Compra de local</option>
+            <option>Compra de terreno</option>
+        </select>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
