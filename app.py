@@ -5,7 +5,8 @@ import os
 import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from email.mime.text import MIMEText, MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 from fpdf import FPDF
 
