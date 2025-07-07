@@ -35,7 +35,7 @@ EMPRESAS_EMAIL = {
 # Clase PDF personalizada
 class LeadPDF(FPDF):
     def header(self):
-        self.image('A_vector-based_digital_illustration_logo_features_.png', 10, 8, 33)
+        self.image('static/img/logo.png', 10, 8, 33)
         self.set_font('Arial', 'B', 14)
         self.cell(80)
         self.cell(30, 10, 'Resumen del Lead Hipotecario', 0, 0, 'C')
