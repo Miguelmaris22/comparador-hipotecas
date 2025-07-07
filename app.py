@@ -85,6 +85,14 @@ def enviar():
     else:
         empresa = "Lead sin asignar"
 
+    # 🔍 Mostrar en consola los datos críticos
+    print("==== DATOS DE ENVÍO ====")
+    print("Fecha:", fecha_envio)
+    print("IP:", ip)
+    print("User-Agent:", user_agent)
+    print("Empresa:", empresa)
+    print("========================")
+
     # Guardar en Google Sheets
     fila = [
         fecha_envio,
@@ -104,6 +112,7 @@ def enviar():
         empresa
     ]
     sheet.append_row(fila)
+
 
     # Datos para PDF y correos
     datos_lead = {
